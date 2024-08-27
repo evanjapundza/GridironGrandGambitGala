@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { fetchDraftPicks, fetchUser } from "../../Sleeper-API-Service";
-import DraftPicks from "../../components/DraftPicks";
 import Tabs from "../../components/Tabs";
 
 export default function Home() {
