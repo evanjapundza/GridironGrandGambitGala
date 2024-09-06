@@ -19,10 +19,10 @@ export default function Home() {
                 // Fetch user info for each unique user ID
                 const userPromises = uniqueUserIds.map(async (userId) => {
                     const userInfo = await fetchUser(userId);
-                    return { 
-                        userId, 
-                        displayName: userInfo.display_name, 
-                        avatar: userInfo.avatar 
+                    return {
+                        userId,
+                        displayName: userInfo.display_name,
+                        avatar: userInfo.avatar
                     };
                 });
 
@@ -33,7 +33,7 @@ export default function Home() {
                 const userMap = userData.reduce((acc, user) => {
                     acc[user.userId] = {
                         displayName: user.displayName,
-                        avatar: user.avatar 
+                        avatar: user.avatar
                     };
                     return acc;
                 }, {});
@@ -49,12 +49,34 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="flex flex-col w-full h-full">
-            <div className="p-4">
-                <h1 className="text-5xl text-center font-comicSans">Gridiron Grand Gambit Gala</h1>
+        <div className="flex flex-col min-h-screen bg-background">
+            <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                    <h1 className="text-2xl font-bold">Gridiron Grand Gambit Gala</h1>
+                </div>
+                <nav className="flex items-center gap-4">
+                    <a href="/standings" className="text-sm font-medium hover:text-primary-foreground/80">
+                        Standings
+                    </a>
+                    <a href="#" className="text-sm font-medium hover:text-primary-foreground/80">
+                        Player Stats
+                    </a>
+                    <a href="#" className="text-sm font-medium hover:text-primary-foreground/80">
+                        Matchups
+                    </a>
+                    <a href="#" className="text-sm font-medium hover:text-primary-foreground/80">
+                        Power Rankings
+                    </a>
+                    <a href="/drafthistory" className="text-sm font-medium hover:text-primary-foreground/80">
+                        Draft History
+                    </a>
+                </nav>
+            </header>
+
+            <div className="flex w-full items-center justify-center">
+                <img src="/playersimages/markandrews.png" alt="mark" className="h-[200px] w-[500px]" />
             </div>
-            {/* Pass draftPicks and userMap to DraftPicks */}
-            <Tabs draftPicks={draftPicks} userData={userMap}/>
+
         </div>
     );
 }
