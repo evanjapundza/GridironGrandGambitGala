@@ -7,7 +7,6 @@ export default function Home() {
             try {
                 // Fetch the draft picks first
                 const fetchedDraftPicks = await fetchDraftPicks();
-                setDraftPicks(fetchedDraftPicks);
 
                 // Extract unique user IDs from the draft picks
                 const uniqueUserIds = [...new Set(fetchedDraftPicks.map(pick => pick.picked_by))].filter(Boolean);
@@ -35,7 +34,6 @@ export default function Home() {
                 }, {});
 
                 // Set the user map state
-                setUserMap(userMap);
             } catch (error) {
                 console.error("Error fetching draft picks or user data:", error);
             }
