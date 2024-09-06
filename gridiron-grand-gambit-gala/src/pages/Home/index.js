@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { fetchDraftPicks, fetchUser } from "../../Sleeper-API-Service";
-import Tabs from "../../components/Tabs";
 
 export default function Home() {
     const [draftPicks, setDraftPicks] = useState([]);
@@ -58,13 +57,13 @@ export default function Home() {
                     <a href="/standings" className="text-sm font-medium hover:text-primary-foreground/80">
                         Standings
                     </a>
-                    <a href="#" className="text-sm font-medium hover:text-primary-foreground/80">
+                    <a href="/playerstats" className="text-sm font-medium hover:text-primary-foreground/80">
                         Player Stats
                     </a>
-                    <a href="#" className="text-sm font-medium hover:text-primary-foreground/80">
+                    <a href="/matchups" className="text-sm font-medium hover:text-primary-foreground/80">
                         Matchups
                     </a>
-                    <a href="#" className="text-sm font-medium hover:text-primary-foreground/80">
+                    <a href="/powerrankings" className="text-sm font-medium hover:text-primary-foreground/80">
                         Power Rankings
                     </a>
                     <a href="/drafthistory" className="text-sm font-medium hover:text-primary-foreground/80">
