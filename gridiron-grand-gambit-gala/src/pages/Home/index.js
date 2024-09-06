@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { fetchDraftPicks, fetchUser } from "../../Sleeper-API-Service";
+import React from "react";
 
 export default function Home() {
 
