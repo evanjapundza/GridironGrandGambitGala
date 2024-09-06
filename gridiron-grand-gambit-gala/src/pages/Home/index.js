@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import { fetchDraftPicks, fetchUser } from "../../Sleeper-API-Service";
 
 export default function Home() {
-    const [draftPicks, setDraftPicks] = useState([]);
-    const [userMap, setUserMap] = useState({}); // Store user information
-
     useEffect(() => {
         const fetchData = async () => {
             try {
